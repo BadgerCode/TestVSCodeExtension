@@ -43,6 +43,12 @@
 			}
 		],
 		"menus": {
+			"commandPalette": [
+				{
+					"command": "nodeDependencies.refreshEntry",
+					"when": "false"
+				}
+			],
 			"view/title": [
 				{
 					"command": "nodeDependencies.refreshEntry",
