@@ -27,8 +27,25 @@
 			{
 				"command": "testextension.anotherCommand",
 				"title": "This is another command"
+			},
+			{
+				"command": "nodeDependencies.refreshEntry",
+				"title": "Refresh",
+				"icon": {
+					"light": "resources/light/refresh.svg",
+					"dark": "resources/dark/refresh.svg"
+				}
 			}
 		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "nodeDependencies.refreshEntry",
+					"when": "view == nodeDependenciesSideBar",
+					"group": "navigation"
+				}
+			]
+		},
 		"views": {
 			"explorer": [
 				{

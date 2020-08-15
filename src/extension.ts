@@ -34,17 +34,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(anotherCommand);
 
-	if (vscode.workspace.rootPath != undefined) {
-		vscode.window.registerTreeDataProvider(
-			'nodeDependencies',
-			new NodeDependenciesProvider(vscode.workspace.rootPath)
-		);
 
-		vscode.window.registerTreeDataProvider(
-			'nodeDependenciesSideBar',
-			new NodeDependenciesProvider(vscode.workspace.rootPath)
-		);
-	}
+
+	const nodeDependenciesProvider = new NodeDependenciesProvider(vscode.workspace.rootPath);
+	vscode.window.registerTreeDataProvider('nodeDependencies', nodeDependenciesProvider);
+	vscode.window.registerTreeDataProvider('nodeDependenciesSideBar', nodeDependenciesProvider);
+	vscode.commands.registerCommand('nodeDependencies.refreshEntry', () => nodeDependenciesProvider.refresh());
 }
 
 // this method is called when your extension is deactivated

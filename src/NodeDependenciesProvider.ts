@@ -3,7 +3,10 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 export class NodeDependenciesProvider implements vscode.TreeDataProvider<Dependency> {
-    constructor(private workspaceRoot: string) { }
+    private _onDidChangeTreeData: vscode.EventEmitter<Dependency | undefined> = new vscode.EventEmitter<Dependency | undefined>();
+    readonly onDidChangeTreeData: vscode.Event<Dependency | undefined> = this._onDidChangeTreeData.event;
+
+    constructor(private workspaceRoot: string | undefined) { }
 
     getTreeItem(element: Dependency): vscode.TreeItem {
         return element;
@@ -32,6 +35,10 @@ export class NodeDependenciesProvider implements vscode.TreeDataProvider<Depende
         }
     }
 
+    refresh(): void {
+        this._onDidChangeTreeData.fire(undefined);
+    }
+
     /**
      * Given the path to package.json, read all its dependencies and devDependencies.
      */
@@ -40,7 +47,7 @@ export class NodeDependenciesProvider implements vscode.TreeDataProvider<Depende
             const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
 
             const toDep = (moduleName: string, version: string): Dependency => {
-                if (this.pathExists(path.join(this.workspaceRoot, 'node_modules', moduleName))) {
+                if (this.pathExists(path.join(this.workspaceRoot!, 'node_modules', moduleName))) {
                     return new Dependency(
                         moduleName,
                         version,
