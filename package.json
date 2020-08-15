@@ -40,7 +40,7 @@
 				{
 					"id": "nodeDependenciesSideBar",
 					"name": "Node Dependencies",
-					"icon": "./media/list-solid.svg",
+					"icon": "./resources/list-solid.svg",
 					"contextualTitle": "Package Explorer"
 				}
 			]
@@ -50,7 +50,7 @@
 				{
 					"id": "package-explorer",
 					"title": "Package Explorer",
-					"icon": "./media/list-solid.svg"
+					"icon": "./resources/list-solid.svg"
 				}
 			]
 		}
