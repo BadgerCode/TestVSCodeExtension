@@ -42,6 +42,14 @@ export function activate(context: vscode.ExtensionContext) {
 
 
 
+	let terminalCommand = vscode.commands.registerCommand('testextension.terminalcommand', () => {
+		var terminal = vscode.window.createTerminal("My terminal");
+		terminal.show();
+		terminal.sendText("echo \"Hello world\"");
+	});
+
+
+
 	const nodeDependenciesProvider = new NodeDependenciesProvider(vscode.workspace.rootPath);
 	vscode.window.registerTreeDataProvider('nodeDependencies', nodeDependenciesProvider);
 	vscode.window.registerTreeDataProvider('nodeDependenciesSideBar', nodeDependenciesProvider);

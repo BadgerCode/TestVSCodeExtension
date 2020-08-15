@@ -14,6 +14,7 @@
 	"activationEvents": [
 		"onCommand:testextension.helloWorld",
 		"onCommand:testextension.anotherCommand",
+		"onCommand:testextension.terminalcommand",
 		"onView:nodeDependencies",
 		"onView:nodeDependenciesSideBar"
 	],
@@ -27,6 +28,10 @@
 			{
 				"command": "testextension.anotherCommand",
 				"title": "This is another command"
+			},
+			{
+				"command": "testextension.terminalcommand",
+				"title": "Open a test terminal"
 			},
 			{
 				"command": "nodeDependencies.refreshEntry",
