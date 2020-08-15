@@ -30,6 +30,12 @@ export function activate(context: vscode.ExtensionContext) {
 
 		// Display a message box to the user
 		vscode.window.showInformationMessage('This is another command!');
+
+		// Prompt the user for some information
+		vscode.window.showInputBox({ prompt: 'Enter something please' })
+			.then(response => {
+				vscode.window.showInformationMessage(`You said: ${response}`);
+			});
 	});
 
 	context.subscriptions.push(anotherCommand);
