@@ -14,7 +14,8 @@
 	"activationEvents": [
 		"onCommand:testextension.helloWorld",
 		"onCommand:testextension.anotherCommand",
-		"onView:nodeDependencies"
+		"onView:nodeDependencies",
+		"onView:nodeDependenciesSideBar"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -33,6 +34,23 @@
 				{
 					"id": "nodeDependencies",
 					"name": "Node Dependencies"
+				}
+			],
+			"package-explorer": [
+				{
+					"id": "nodeDependenciesSideBar",
+					"name": "Node Dependencies",
+					"icon": "./media/list-solid.svg",
+					"contextualTitle": "Package Explorer"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "package-explorer",
+					"title": "Package Explorer",
+					"icon": "./media/list-solid.svg"
 				}
 			]
 		}

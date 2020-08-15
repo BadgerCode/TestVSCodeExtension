@@ -27,3 +27,9 @@ This will open a new instance of VS Code with this extension installed.
 
 After changing a file inside `./src/`, enter the command `Reload Window` (press `CTRL` + `SHIFT` + `P`).
 
+
+<br>
+<br>
+
+# Resources
+* List icon SVG from font awesome- https://fontawesome.com/icons/list?style=solid

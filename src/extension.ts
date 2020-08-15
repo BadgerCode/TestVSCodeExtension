@@ -39,6 +39,11 @@ export function activate(context: vscode.ExtensionContext) {
 			'nodeDependencies',
 			new NodeDependenciesProvider(vscode.workspace.rootPath)
 		);
+
+		vscode.window.registerTreeDataProvider(
+			'nodeDependenciesSideBar',
+			new NodeDependenciesProvider(vscode.workspace.rootPath)
+		);
 	}
 }
 
