@@ -8,6 +8,16 @@ A test VS code extension.
 
 
 <br>
+
+# Screenshots
+The "Node Dependencies" sub-menu at the bottom of the explorer pane.
+![explorer-submenu](/screenshots/explorer-submenu.png)
+
+The node dependencies sidebar option.
+![sidebar](/screenshots/sidebar.png)
+
+
+<br>
 <br>
 
 
